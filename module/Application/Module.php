@@ -11,9 +11,30 @@ namespace Application;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+
 
 class Module
 {
+    public function getServiceConfig()
+    {
+        return array(
+            'shared' => array(
+            ),
+            'factories' => array(
+
+                'Application\Service\User'  => function($sm) {
+                    $objectManager = $sm->get('Doctrine\ORM\EntityManager');
+                    $service = new Service\User($objectManager);
+                    return $service;
+                },
+            ),
+        );
+    }
+
+    
+    
+    
     public function onBootstrap(MvcEvent $e)
     {
         $eventManager        = $e->getApplication()->getEventManager();

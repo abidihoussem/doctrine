@@ -15,19 +15,39 @@ use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController {
 
+    protected $userService;
+    
     public function indexAction() {
-        $objectManager = $this
-                ->getServiceLocator()
-                ->get('Doctrine\ORM\EntityManager');
+//        $objectManager = $this
+//                ->getServiceLocator()
+//                ->get('Doctrine\ORM\EntityManager');
+//
+//        $user = new \Application\Entity\User();
+//        $user->setFullName('Marco Pivetta');
+//
+//        $objectManager->persist($user);
+//        $objectManager->flush();
+//
+//        return new ViewModel();
+//        die(var_dump($user->getId())); // yes, I'm lazy
+//        $useId = $this->params('id');
+//        $user = $this->getUserService()->findById($useId);
+        return new ViewModel(/*array('user'=>$user)*/);
+    }
+    
+    public function getUserService()
+    {
+        if (!isset($this->userService)) {
+            $this->userService = $this->getServiceLocator()->get('Application\Service\User');
+        }
 
-        $user = new \Application\Entity\User();
-        $user->setFullName('Marco Pivetta');
+        return $this->userService;
+    }
 
-        $objectManager->persist($user);
-        $objectManager->flush();
-
-        return new ViewModel();
-        die(var_dump($user->getId())); // yes, I'm lazy
+    public function setUserService($userService)
+    {
+        $this->userService = $userService;
+        return $this;
     }
 
 }

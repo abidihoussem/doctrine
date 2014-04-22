@@ -31,6 +31,25 @@ return array(
 //                array('route' => 'zfcadmin/logout', 'roles' => array('user', 'admin')),
 //                array('route' => 'zfcadmin/authenticate', 'roles' => array( 'guest', 'user', 'admin')),
 //            )
+            
+//            'BjyAuthorize\Guard\Route' => array(
+//                array('route' => 'zfcuser', 'roles' => array('user')),
+//                array('route' => 'zfcuser/login', 'roles' => array('guest', 'user', 'admin')),
+//                array('route' => 'zfcuser/authenticate', 'roles' => array( 'guest', 'user', 'admin')),
+//                array('route' => 'zfcuser/register', 'roles' => array('guest')),
+//                array('route' => 'zfcuser/logout', 'roles' => array('user')),
+//                array('route' => 'zfcadmin', 'roles' => array('admin')),
+//                array('route' => 'zfcadmin/logout', 'roles' => array('user', 'admin')),
+//                array('route' => 'zfcadmin/login', 'roles' => array('guest', 'user', 'admin')),
+//                array('route' => 'zfcadmin/authenticate', 'roles' => array( 'guest', 'user', 'admin')),
+//                array('route' => 'zfcadmin/register', 'roles' => array('guest')),
+//                array('route' => 'home', 'roles' => array('guest', 'user', 'admin')),
+//                array('route' => 'home/logout', 'roles' => array('user', 'admin')),
+//                array('route' => 'home/add_job', 'roles' => array('user', 'admin')),
+//                array('route' => 'home/login', 'roles' => array('guest', 'user', 'admin')),
+//                array('route' => 'home/authenticate', 'roles' => array('guest', 'user', 'admin')),
+//                array('route' => 'home/register', 'roles' => array('guest')),
+//            )
         )
     )
 );
